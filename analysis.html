@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Water Analysis | HydroSafe</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     NAVBAR
+======================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+           <img src="logo.jpeg" alt="HydroSafe">
+            <h2>HydroSafe</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="analysis.html">
+                    Analysis
+                </a>
+            </li>
+
+            <li>
+                <a href="purifier.html">
+                    Solutions
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html"
+                   class="login">
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ========================================
+     ANALYSIS HERO
+======================================== -->
+
+<section class="analysis-hero">
+
+    <div class="analysis-hero-content">
+
+        <p class="section-label">
+            SMART WATER ANALYSIS
+        </p>
+
+        <h1>
+            Understand Your Water Quality
+        </h1>
+
+        <p>
+            Enter your water's TDS value and get a simple
+            explanation of the water condition along with
+            a suitable purification technology recommendation.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     TDS INPUT SECTION
+======================================== -->
+
+<section class="analysis-section">
+
+    <div class="analysis-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="analysis-info">
+
+            <p class="section-label">
+                TDS CHECK
+            </p>
+
+            <h2>
+                Enter Your TDS Level
+            </h2>
+
+            <p>
+                TDS (Total Dissolved Solids) indicates the
+                amount of dissolved substances present in water.
+                Use your TDS meter reading to begin the analysis.
+            </p>
+
+
+            <!-- TIP -->
+
+            <div class="analysis-tip">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <div>
+
+                    <h3>
+                        Where can I find my TDS value?
+                    </h3>
+
+                    <p>
+                        You can measure your water using a
+                        digital TDS meter or use a recent
+                        water-quality report.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="analysis-card">
+
+            <div class="input-icon">
+
+                <i class="fa-solid fa-droplet"></i>
+
+            </div>
+
+
+            <h3>
+                Water TDS Value
+            </h3>
+
+
+            <p>
+                Enter a value between 0 and 2000 ppm.
+            </p>
+
+
+            <!-- TDS INPUT -->
+
+            <div class="tds-input-box">
+
+                <input
+                    type="number"
+                    id="tdsInput"
+                    placeholder="Example: 350"
+                    min="0"
+                    max="2000"
+                >
+
+                <span>
+                    ppm
+                </span>
+
+            </div>
+
+
+            <!-- ========================================
+                 IMPORTANT:
+                 Added id="analyzeButton"
+                 Removed onclick="analyzeWater()"
+            ======================================== -->
+
+            <button
+                class="analyze-button"
+                id="analyzeButton"
+                type="button"
+            >
+
+                Analyze My Water
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <!-- ERROR MESSAGE -->
+
+            <p
+                id="analysisError"
+                class="analysis-error"
+            ></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     RESULT SECTION
+======================================== -->
+
+<section
+    class="result-section"
+    id="resultSection"
+>
+
+    <div class="result-container">
+
+
+        <p class="section-label">
+            YOUR RESULT
+        </p>
+
+
+        <h2 id="resultTitle">
+            Water Analysis Result
+        </h2>
+
+
+        <p id="resultDescription">
+            Your result will appear here after analysis.
+        </p>
+
+
+
+        <!-- RESULT DETAILS -->
+
+        <div class="result-details">
+
+
+            <!-- TDS -->
+
+            <div class="result-box">
+
+                <i class="fa-solid fa-droplet"></i>
+
+                <span>
+                    TDS Level
+                </span>
+
+                <strong id="resultTds">
+                    --
+                </strong>
+
+            </div>
+
+
+
+            <!-- TECHNOLOGY -->
+
+            <div class="result-box">
+
+                <i class="fa-solid fa-filter"></i>
+
+                <span>
+                    Recommended Technology
+                </span>
+
+                <strong id="resultTechnology">
+                    --
+                </strong>
+
+            </div>
+
+
+
+            <!-- CONDITION -->
+
+            <div class="result-box">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Water Condition
+                </span>
+
+                <strong id="resultCondition">
+                    --
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REASON -->
+
+        <div class="result-reason">
+
+            <h3>
+                Why this recommendation?
+            </h3>
+
+            <p id="resultReason">
+                Complete the analysis to see the explanation.
+            </p>
+
+        </div>
+
+
+
+        <!-- EXPLORE PURIFIERS -->
+
+        <a
+            href="purifier.html"
+            class="result-button"
+        >
+
+            Explore Purifiers
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <img
+                    src="logo.jpeg"
+                    alt="HydroSafe"
+                >
+
+                <h2>
+                    HydroSafe
+                </h2>
+
+            </div>
+
+
+            <p>
+                Smart Water. Healthier Life.
+            </p>
+
+
+            <p class="footer-description">
+
+                Helping households understand their
+                water quality and discover suitable
+                purification solutions.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="analysis.html">
+                Water Analysis
+            </a>
+
+            <a href="purifier.html">
+                Solutions
+            </a>
+
+            <li><a href="index.html#about">About</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="footer-column">
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="analysis.html">
+                TDS Analysis
+            </a>
+
+            <a href="purifier.html">
+                Purifier Guide
+            </a>
+
+            <a href="purifier.html">
+                Recommendations
+            </a>
+
+            <a href="purifier.html">
+                Water Solutions
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                hydrosafe.oo1@gmail.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                India
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 HydroSafe. All Rights Reserved.
+        </p>
+
+        <div>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms of Use
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script
+    type="module"
+    src="script.js"
+></script>
+
+
+</body>
+
+</html>

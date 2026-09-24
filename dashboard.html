@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | HydroSafe</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVBAR
+    ========================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img src="logo.jpeg"
+                 alt="HydroSafe">
+
+            <h2>HydroSafe</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="analysis.html">
+                    Analysis
+                </a>
+            </li>
+
+            <li>
+                <a href="purifier.html">
+                    Solutions
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+
+                <button
+                    id="logoutButton"
+                    class="nav-logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ========================================
+         DASHBOARD
+    ========================================= -->
+
+    <main class="dashboard">
+
+
+        <!-- WELCOME -->
+
+        <section class="dashboard-welcome">
+
+            <div class="welcome-top">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        HYDROSAFE DASHBOARD
+                    </p>
+
+
+                    <h1>
+                        Welcome back! 👋
+                    </h1>
+
+
+                    <p>
+                        Understand your water and explore
+                        suitable purification technologies.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- USER INFORMATION -->
+
+            <div class="user-info">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <div>
+
+                    <span>
+                        Logged in as
+                    </span>
+
+                    <strong id="userEmail">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             QUICK ACTIONS
+        ========================================= -->
+
+        <section class="dashboard-actions">
+
+
+            <!-- WATER ANALYSIS -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+
+                <h3>
+                    Water Analysis
+                </h3>
+
+
+                <p>
+                    Enter your TDS value and get a
+                    purification technology recommendation.
+                </p>
+
+
+                <a href="analysis.html"
+                   class="dashboard-button">
+
+                    Analyze Water
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PURIFIER GUIDE -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    <i class="fa-solid fa-filter"></i>
+
+                </div>
+
+
+                <h3>
+                    Purifier Guide
+                </h3>
+
+
+                <p>
+                    Explore purification technologies
+                    and suitable purifier options.
+                </p>
+
+
+                <a href="purifier.html"
+                   class="dashboard-button">
+
+                    Explore Guide
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- HOME -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </div>
+
+
+                <h3>
+                    HydroSafe Home
+                </h3>
+
+
+                <p>
+                    Learn more about HydroSafe and
+                    how our water guidance works.
+                </p>
+
+
+                <a href="index.html"
+                   class="dashboard-button">
+
+                    Visit Home
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             LATEST WATER ANALYSIS
+        ========================================= -->
+
+        <section class="latest-analysis">
+
+
+            <div class="latest-analysis-header">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        LATEST ANALYSIS
+                    </p>
+
+
+                    <h2>
+                        Your Water Analysis
+                    </h2>
+
+                </div>
+
+
+                <a href="analysis.html"
+                   class="latest-analysis-link">
+
+                    New Analysis
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="latest-analysis-content">
+
+
+                <!-- TDS -->
+
+                <div class="analysis-stat">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <div>
+
+                        <span>
+                            TDS Level
+                        </span>
+
+                        <strong id="dashboardTds">
+                            No analysis yet
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONDITION -->
+
+                <div class="analysis-stat">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+
+                        <span>
+                            Condition
+                        </span>
+
+                        <strong id="dashboardCondition">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TECHNOLOGY -->
+
+                <div class="analysis-stat">
+
+                    <i class="fa-solid fa-filter"></i>
+
+                    <div>
+
+                        <span>
+                            Recommended Technology
+                        </span>
+
+                        <strong id="dashboardTechnology">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             SMART TDS ANALYSIS
+        ========================================= -->
+
+        <section class="dashboard-analysis">
+
+
+            <div class="analysis-content">
+
+                <p class="dashboard-label">
+                    SMART TDS ANALYSIS
+                </p>
+
+
+                <h2>
+                    What does your water need?
+                </h2>
+
+
+                <p>
+                    Enter your TDS value to get a
+                    starting-point recommendation for
+                    purification technology.
+                </p>
+
+
+                <a href="analysis.html"
+                   class="analysis-main-button">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    Check My Water
+
+                </a>
+
+            </div>
+
+
+            <div class="analysis-visual">
+
+                <i class="fa-solid fa-water"></i>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             INFORMATION
+        ========================================= -->
+
+        <section class="dashboard-info">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+
+            <h3>
+                A TDS value is only a starting point
+            </h3>
+
+
+            <p>
+
+                TDS measures dissolved substances in water.
+                It does not by itself determine whether water
+                is completely safe. HydroSafe uses TDS as one
+                input for purification guidance.
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 HydroSafe. Smart Water. Healthier Life.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         DASHBOARD AUTHENTICATION
+    ========================================= -->
+
+    <script type="module">
+
+        import {
+            auth,
+            onAuthStateChanged,
+            signOut
+        } from "./firebase.js";
+
+
+        // ========================================
+        // CHECK LOGIN STATUS
+        // ========================================
+
+        onAuthStateChanged(
+            auth,
+            (user) => {
+
+                if (!user) {
+
+                    window.location.href =
+                        "login.html";
+
+                    return;
+
+                }
+
+
+                // ========================================
+                // DISPLAY USER EMAIL
+                // ========================================
+
+                const userEmail =
+                    document.getElementById(
+                        "userEmail"
+                    );
+
+
+                if (userEmail) {
+
+                    userEmail.textContent =
+                        user.email;
+
+                }
+
+            }
+        );
+
+
+
+        // ========================================
+        // LOAD LATEST WATER ANALYSIS
+        // ========================================
+
+        const latestAnalysis =
+            localStorage.getItem(
+                "hydrosafeLatestAnalysis"
+            );
+
+
+        if (latestAnalysis) {
+
+            const data =
+                JSON.parse(
+                    latestAnalysis
+                );
+
+
+            document.getElementById(
+                "dashboardTds"
+            ).textContent =
+                data.tds + " ppm";
+
+
+            document.getElementById(
+                "dashboardCondition"
+            ).textContent =
+                data.condition;
+
+
+            document.getElementById(
+                "dashboardTechnology"
+            ).textContent =
+                data.technology;
+
+        }
+
+
+
+        // ========================================
+        // LOGOUT
+        // ========================================
+
+        const logoutButton =
+            document.getElementById(
+                "logoutButton"
+            );
+
+
+        if (logoutButton) {
+
+            logoutButton.addEventListener(
+                "click",
+                async () => {
+
+                    try {
+
+                        await signOut(auth);
+
+
+                        window.location.href =
+                            "login.html";
+
+                    }
+
+                    catch (error) {
+
+                        console.error(
+                            "Logout error:",
+                            error
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
